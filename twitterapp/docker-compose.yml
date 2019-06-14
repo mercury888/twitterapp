@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    container_name: ${APP_NAME}_web
+    build:
+      context: ./docker/web
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/app
+  cache:
+    container_name: ${APP_NAME}_cache
+    image: redis:4.0.14
+    ports:
+      - 6379:6379
+  search:
+    container_name: ${APP_NAME}_search
+    image: elasticsearch:7.1.1
+    ports:
+      - 9200:9200
+  

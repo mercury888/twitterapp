@@ -11,13 +11,4 @@
 |
 */
 
-// Route::get('/', function () {
-    // return view('welcome');
-// });
-
-// Route::get('/userTimeline', function()
-// {
-	// return Twitter::getSearch(['q' => 'from:BeingSalmanKhan', 'until' => date("Y-m-d", strtotime('-48 hours', time())), 'format' => 'array']);
-// });
-
 Route::get('tweets_count/{id}', 'TwitterHandleController@get_tweets_count');
